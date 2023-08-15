@@ -7,12 +7,11 @@ const handleLocationChange = (changeEvent) => {
   }
 };
 
-
 export const LocationTypeChoices = async () => {
   const response = await fetch("http://localhost:8088/socioLocations");
   const locations = await response.json();
 
-  document.addEventListener('change', handleLocationChange )
+  document.addEventListener("change", handleLocationChange);
 
   let choicesHTML = "<h2>Which type of area do you live in?</h2>";
   for (const location of locations) {
