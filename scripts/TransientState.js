@@ -29,4 +29,7 @@ export const saveSurveySubmission = async () => {
     "http://localhost:8088/submissions",
     postOptions
   );
+
+  const customEvent = new CustomEvent("newSubmissionCreated")
+  document.dispatchEvent(customEvent)
 };
