@@ -1,0 +1,9 @@
+.submission {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: 1px solid gold;
+  background-color: tan;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
