@@ -5,12 +5,23 @@ export const SubmissionList = async () => {
 
   // Iterate the submissions and create some <section> representations
   let submissionHTML = "";
-  for (const submission of submissions) {
-    submissionHTML += `<section class="submission">
-                        <div>Owns Jeans? ${submission.ownsBlueJeans}</div>
-                        <div></div>Area type foreign key? ${submission.socioLocationId}
-                        </section>`;
-  }
+  const submissionStringArray = submissions.map((submission) => {
+    return `<section class="submission">
+      <div>Owns Jeans? ${submission.ownsBlueJeans}</div>
+      <div></div>Area type foreign key? ${submission.socioLocationId}
+      </section>`;
+  });
+  submissionHTML += submissionStringArray.join("");
+
   return submissionHTML;
-  // Return the HTML string
 };
+
+// for (const submission of submissions) {
+//   submissionHTML += `<section class="submission">
+//                       <div>Owns Jeans? ${submission.ownsBlueJeans}</div>
+//                       <div></div>Area type foreign key? ${submission.socioLocationId}
+//                       </section>`;
+// }
+// return submissionHTML;
+// Return the HTML string
+// };
